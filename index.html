@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+    <title>Journal Talkative - Blog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 font-sans">
+    <!-- Header -->
+    <header class="bg-blue-600 text-white py-4 sticky top-0 z-10 shadow-md">
+      <div class="container mx-auto px-4 flex justify-between items-center">
+        <h1 class="text-2xl font-bold">
+          <a href="/index.html">Journal Talkative</a>
+        </h1>
+        <nav>
+          <ul class="flex space-x-6">
+            <li><a href="/index.html" class="hover:text-gray-200">Home</a></li>
+            <li><a href="#" class="hover:text-gray-200">About</a></li>
+            <li><a href="#" class="hover:text-gray-200">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-blue-500 text-white py-20">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-4xl font-bold mb-4">Welcome to Journal Talkative</h2>
+        <p class="text-lg mb-6">
+          Your source for insightful stories and ideas.
+        </p>
+        <a
+          href="#"
+          class="bg-white text-blue-600 px-6 py-2 rounded-full font-semibold hover:bg-gray-200"
+          >Read Latest Posts</a
+        >
+      </div>
+    </section>
+
+    <!-- Blog Posts Section -->
+    <section class="container mx-auto px-4 py-12">
+      <h2 class="text-3xl font-bold text-center mb-8">Latest Posts</h2>
+      <div
+        id="blog-posts"
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+      >
+        <!-- Blog posts will be dynamically inserted here -->
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6">
+      <div class="container mx-auto px-4 text-center">
+        <p>&copy; 2025 Journal Talkative. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      // Sample blog post data
+      const posts = [
+        {
+          title:
+            "Gay Men’s Underwear, Queer Swimwear & Pride Apparel at DealByEthan.gay",
+          excerpt:
+            "DealByEthan.gay is a bold, inclusive fashion destination celebrating queer identity through expressive style. Specializing in gay men’s underwear, swimwear, and sexy apparel, the most provocative Deal By Ethan site curates vibrant, body-positive pieces that empower confidence and individuality. With a focus on LGBTQ+ fashion for men and Pride-ready designs, DealByEthan's .gay online shop is more than a store—it’s a statement of self-love and visibility.",
+          url: "/sexy-gay-apparel.html",
+        },
+      ];
+
+      // Function to render blog posts
+      function renderPosts() {
+        const blogContainer = document.getElementById("blog-posts");
+        blogContainer.innerHTML = "";
+
+        posts.forEach((post) => {
+          const postElement = document.createElement("div");
+          postElement.className = "bg-white p-6 rounded-lg shadow-md";
+          postElement.innerHTML = `
+          <h3 class="text-xl font-semibold mb-2">${post.title}</h3>
+          <p class="text-gray-600 mb-4">${post.excerpt}</p>
+          <a href="${post.url}" class="text-blue-600 hover:underline">Read More</a>
+        `;
+          blogContainer.appendChild(postElement);
+        });
+      }
+
+      // Initial render
+      document.addEventListener("DOMContentLoaded", renderPosts);
+    </script>
+  </body>
+</html>
